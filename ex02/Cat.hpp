@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: javmarti <javmarti@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/30 18:59:47 by javmarti          #+#    #+#             */
-/*   Updated: 2023/05/30 18:59:47 by javmarti         ###   ########.fr       */
+/*   Created: 2023/05/29 15:08:43 by javmarti          #+#    #+#             */
+/*   Updated: 2023/05/29 15:08:43 by javmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _MATERIASOURCE_HPP_
-# define _MATERIASOURCE_HPP_
+#ifndef _CAT_HPP_
+# define _CAT_HPP_
 
-# include <string>
+# include "AAnimal.hpp"
+# include "Brain.hpp"
 
-# include "IMateriaSource.hpp"
-# include "AMateria.hpp"
-
-class	MateriaSource: public IMateriaSource
+class	Cat: public AAnimal
 {
-	protected:
-		AMateria*	_inventory[4];
+	private:
+		Brain*	brain;
 	public:
-		MateriaSource(void);
-		~MateriaSource(void);
-		void	learnMateria(AMateria*);
-		AMateria*	createMateria(std::string const& type);
+		Cat(void);
+		~Cat(void);
+
+		Brain*	getBrain(void) const;
+
+		Cat&	operator=(const Cat& newCat);
+
+		void	makeSound(void) const;
 };
 
 #endif

@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: javmarti <javmarti@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/30 18:59:47 by javmarti          #+#    #+#             */
-/*   Updated: 2023/05/30 18:59:47 by javmarti         ###   ########.fr       */
+/*   Created: 2023/05/30 12:19:23 by javmarti          #+#    #+#             */
+/*   Updated: 2023/05/30 12:19:23 by javmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _MATERIASOURCE_HPP_
-# define _MATERIASOURCE_HPP_
+#include "WrongCat.hpp"
 
-# include <string>
-
-# include "IMateriaSource.hpp"
-# include "AMateria.hpp"
-
-class	MateriaSource: public IMateriaSource
+WrongCat::WrongCat(void)
 {
-	protected:
-		AMateria*	_inventory[4];
-	public:
-		MateriaSource(void);
-		~MateriaSource(void);
-		void	learnMateria(AMateria*);
-		AMateria*	createMateria(std::string const& type);
-};
+	this->type = "WrongCat";
+	std::cout << "WrongCat '" << this->type << "' constructed" << std::endl;
+}
 
-#endif
+WrongCat::~WrongCat(void)
+{
+	std::cout << "WrongCat default destructor called" << std::endl;
+}
+
+void	WrongCat::makeSound(void) const
+{
+	std::cout << "MIIIIIIAAAAAAUUUUU" << std::endl;
+}

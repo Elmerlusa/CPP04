@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: javmarti <javmarti@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/30 12:26:23 by javmarti          #+#    #+#             */
-/*   Updated: 2023/05/30 12:26:23 by javmarti         ###   ########.fr       */
+/*   Created: 2023/05/30 12:17:44 by javmarti          #+#    #+#             */
+/*   Updated: 2023/05/30 12:17:44 by javmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#include "WrongAnimal.hpp"
 
-Brain::Brain(void)
+WrongAnimal::WrongAnimal(void)
 {
-	std::cout << "Brain's default constructor called" << std::endl;
+	std::cout << "WrongAnimal default constructor called" << std::endl;
 }
 
-Brain::Brain(const Brain& newBrain)
+WrongAnimal::~WrongAnimal(void)
 {
-	std::cout << "Brain's copy constructor called" << std::endl;
-	std::copy(newBrain.getIdeas(), newBrain.getIdeas() + 100, this->ideas);
+	std::cout << "WrongAnimal default destructor called" << std::endl;
 }
 
-Brain::~Brain(void)
+std::string	WrongAnimal::getType(void) const
 {
-	std::cout << "Brain's default destructor called" << std::endl;
+	return this->type;
 }
 
-const std::string*	Brain::getIdeas(void) const
+void	WrongAnimal::makeSound(void) const
 {
-	return this->ideas;
+	std::cout << "I'm an WrongAnimal!" << std::endl;
 }

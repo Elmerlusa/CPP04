@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: javmarti <javmarti@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/30 18:59:47 by javmarti          #+#    #+#             */
-/*   Updated: 2023/05/30 18:59:47 by javmarti         ###   ########.fr       */
+/*   Created: 2023/05/30 12:18:45 by javmarti          #+#    #+#             */
+/*   Updated: 2023/05/30 12:18:45 by javmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _MATERIASOURCE_HPP_
-# define _MATERIASOURCE_HPP_
+#ifndef _WRONGCAT_HPP_
+# define _WRONGCAT_HPP_
 
-# include <string>
+# include "WrongAnimal.hpp"
 
-# include "IMateriaSource.hpp"
-# include "AMateria.hpp"
-
-class	MateriaSource: public IMateriaSource
+class	WrongCat: public WrongAnimal
 {
-	protected:
-		AMateria*	_inventory[4];
 	public:
-		MateriaSource(void);
-		~MateriaSource(void);
-		void	learnMateria(AMateria*);
-		AMateria*	createMateria(std::string const& type);
+		WrongCat(void);
+		~WrongCat(void);
+
+		void	makeSound(void) const;
 };
 
 #endif

@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: javmarti <javmarti@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/30 18:59:47 by javmarti          #+#    #+#             */
-/*   Updated: 2023/05/30 18:59:47 by javmarti         ###   ########.fr       */
+/*   Created: 2023/05/30 12:33:38 by javmarti          #+#    #+#             */
+/*   Updated: 2023/05/30 12:33:38 by javmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _MATERIASOURCE_HPP_
-# define _MATERIASOURCE_HPP_
+#include "AAnimal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
 
-# include <string>
-
-# include "IMateriaSource.hpp"
-# include "AMateria.hpp"
-
-class	MateriaSource: public IMateriaSource
+int	main(void)
 {
-	protected:
-		AMateria*	_inventory[4];
-	public:
-		MateriaSource(void);
-		~MateriaSource(void);
-		void	learnMateria(AMateria*);
-		AMateria*	createMateria(std::string const& type);
-};
-
-#endif
+	// const AAnimal a;
+	const Dog	d;
+	const Cat	c;
+	d.makeSound();
+	c.makeSound();
+	return 0;
+}

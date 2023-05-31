@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: javmarti <javmarti@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/30 18:59:47 by javmarti          #+#    #+#             */
-/*   Updated: 2023/05/30 18:59:47 by javmarti         ###   ########.fr       */
+/*   Created: 2023/05/30 18:49:21 by javmarti          #+#    #+#             */
+/*   Updated: 2023/05/30 18:49:21 by javmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _MATERIASOURCE_HPP_
-# define _MATERIASOURCE_HPP_
+#ifndef _IMATERIASOURCE_HPP_
+# define _IMATERIASOURCE_HPP_
 
 # include <string>
 
-# include "IMateriaSource.hpp"
 # include "AMateria.hpp"
 
-class	MateriaSource: public IMateriaSource
+class	IMateriaSource
 {
-	protected:
-		AMateria*	_inventory[4];
 	public:
-		MateriaSource(void);
-		~MateriaSource(void);
-		void	learnMateria(AMateria*);
-		AMateria*	createMateria(std::string const& type);
+		virtual ~IMateriaSource(void) {}
+		virtual void	learnMateria(AMateria*) = 0;
+		virtual AMateria*	createMateria(std::string const& type) = 0;
 };
 
 #endif
