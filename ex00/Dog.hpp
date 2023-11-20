@@ -19,9 +19,12 @@ class	Dog: public Animal
 {
 	public:
 		Dog(void);
+		Dog(const Dog& dog);
 		~Dog(void);
 
 		void	makeSound(void) const;
+
+		Dog&	operator=(const Dog& dog);
 };
 
 #endif

@@ -12,9 +12,19 @@
 
 #include "Animal.hpp"
 
-Animal::Animal(void)
+Animal::Animal(void): type("AnimalDefaultType")
 {
 	std::cout << "Animal default constructor called" << std::endl;
+}
+
+Animal::Animal(const Animal& animal): type(animal.getType())
+{
+	std::cout << "Animal copy constructor called" << std::endl;
+}
+
+Animal::Animal(const std::string& type): type(type)
+{
+	std::cout << "Animal parametized constructor called" << std::endl;
 }
 
 Animal::~Animal(void)
@@ -30,4 +40,13 @@ std::string	Animal::getType(void) const
 void	Animal::makeSound(void) const
 {
 	std::cout << "I'm an animal!" << std::endl;
+}
+
+Animal&	Animal::operator=(const Animal& animal)
+{
+	if (this != &animal)
+	{
+		this->type = animal.getType();
+	}
+	return *this;
 }

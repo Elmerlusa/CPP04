@@ -22,13 +22,14 @@ class	Cat: public Animal
 		Brain*	brain;
 	public:
 		Cat(void);
+		Cat(const Cat& cat);
 		~Cat(void);
 
-		Brain*	getBrain(void) const;
-
-		Cat&	operator=(const Cat& newCat);
+		const Brain&	getBrain(void) const;
 
 		void	makeSound(void) const;
+
+		Cat&	operator=(const Cat& cat);
 };
 
 #endif

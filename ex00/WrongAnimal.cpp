@@ -12,9 +12,19 @@
 
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal(void)
+WrongAnimal::WrongAnimal(void): type("WrongAnimalDefaultType")
 {
 	std::cout << "WrongAnimal default constructor called" << std::endl;
+}
+
+WrongAnimal::WrongAnimal(const WrongAnimal& wrongAnimal): type(wrongAnimal.getType())
+{
+	std::cout << "WrongAnimal copy constructor called" << std::endl;
+}
+
+WrongAnimal::WrongAnimal(const std::string& type): type(type)
+{
+	std::cout << "WrongAnimal parametized constructor called" << std::endl;
 }
 
 WrongAnimal::~WrongAnimal(void)
@@ -29,5 +39,12 @@ std::string	WrongAnimal::getType(void) const
 
 void	WrongAnimal::makeSound(void) const
 {
-	std::cout << "I'm an WrongAnimal!" << std::endl;
+	std::cout << "I'm a WrongAnimal!" << std::endl;
+}
+
+WrongAnimal&	WrongAnimal::operator=(const WrongAnimal& wrongAnimal)
+{
+	if (this != &wrongAnimal)
+		this->type = wrongAnimal.getType();
+	return *this;
 }

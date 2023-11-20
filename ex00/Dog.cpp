@@ -12,10 +12,14 @@
 
 #include "Dog.hpp"
 
-Dog::Dog(void)
+Dog::Dog(void): Animal("Dog")
 {
-	this->type = "Dog";
 	std::cout << "Dog '" << this->type << "' constructed" << std::endl;
+}
+
+Dog::Dog(const Dog& dog): Animal(dog.getType())
+{
+	std::cout << "Dog copy constructor called" << std::endl;
 }
 
 Dog::~Dog(void)
@@ -26,4 +30,11 @@ Dog::~Dog(void)
 void	Dog::makeSound(void) const
 {
 	std::cout << "GUUUUUAAAAUUUU" << std::endl;
+}
+
+Dog&	Dog::operator=(const Dog& dog)
+{
+	if (this != &dog)
+		this->type = dog.getType();
+	return *this;
 }

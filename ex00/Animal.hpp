@@ -22,11 +22,15 @@ class	Animal
 		std::string type;
 	public:
 		Animal(void);
+		Animal(const Animal& animal);
+		Animal(const std::string& type);
 		virtual ~Animal(void);
 
 		std::string	getType(void) const;
 
 		virtual void	makeSound(void) const;
+		
+		Animal&			operator=(const Animal& animal);
 };
 
 #endif

@@ -15,8 +15,7 @@ NAME = animal
 CPP = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-CPPF = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp \
-	Brain.cpp
+CPPF = main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 CPPO = ${CPPF:.cpp=.o}
 
 RM = rm -rf

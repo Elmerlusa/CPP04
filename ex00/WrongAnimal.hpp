@@ -22,11 +22,15 @@ class	WrongAnimal
 		std::string type;
 	public:
 		WrongAnimal(void);
+		WrongAnimal(const WrongAnimal& wrongAnimal);
+		WrongAnimal(const std::string& type);
 		virtual ~WrongAnimal(void);
 
 		std::string	getType(void) const;
 
 		void	makeSound(void) const;
+
+		WrongAnimal&	operator=(const WrongAnimal& wrongAnimal);
 };
 
 #endif

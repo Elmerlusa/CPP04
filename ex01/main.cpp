@@ -16,8 +16,11 @@
 int	main(void)
 {
 	// Deep copy
-	const Animal*	j = new Dog();
-	const Animal*	i = new Cat();
+	const Dog*	j = new Dog();
+	const Dog*	i = new Dog(*j);
+
+	std::cout << "Original Dog's brain is allocated in " << &j->getBrain()
+		<< "\nCopy's brain is allocated in " << &i->getBrain() << std::endl;
 	delete j;
 	delete i;
 	std::cout << "-------------------------------------------------" << std::endl;
@@ -27,9 +30,9 @@ int	main(void)
 	
 	if (size == 0)
 		return 0;
-	for (unsigned int i = 0; i < size/2; i++)
+	for (unsigned int i = 0; i < size / 2; i++)
 		animals[i] = new Dog();
-	for (unsigned int i = size/2; i < size; i++)
+	for (unsigned int i = size / 2; i < size; i++)
 		animals[i] = new Cat();
 	for (unsigned int i = 0; i < size; i++)
 		delete animals[i];
