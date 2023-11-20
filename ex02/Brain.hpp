@@ -26,6 +26,8 @@ class	Brain
 		~Brain(void);
 
 		const std::string*	getIdeas(void) const;
+
+		Brain&	operator=(const Brain& brain);
 };
 
 #endif

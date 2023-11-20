@@ -32,3 +32,10 @@ const std::string*	Brain::getIdeas(void) const
 {
 	return this->ideas;
 }
+
+Brain&	Brain::operator=(const Brain& brain)
+{
+	if (this != &brain)
+		std::copy(brain.getIdeas(), brain.getIdeas() + 100, this->ideas);
+	return *this;
+}

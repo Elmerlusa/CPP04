@@ -22,15 +22,14 @@ class	Dog: public AAnimal
 		Brain*	brain;
 	public:
 		Dog(void);
-		Dog(const Dog& newDog);
+		Dog(const Dog& dog);
 		~Dog(void);
 
-		Brain*	getBrain(void) const;
-
-		Dog&	operator=(const Dog& newDog);
+		const Brain&	getBrain(void) const;
 
 		void	makeSound(void) const;
-		void	analyseClass(void);
+
+		Dog&	operator=(const Dog& dog);
 };
 
 #endif

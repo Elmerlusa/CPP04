@@ -12,10 +12,14 @@
 
 #include "Cat.hpp"
 
-Cat::Cat(void): brain(new Brain())
+Cat::Cat(void): AAnimal("Cat"), brain(new Brain())
 {
-	this->type = "Cat";
 	std::cout << "Cat '" << this->type << "' constructed" << std::endl;
+}
+
+Cat::Cat(const Cat& cat): AAnimal(cat.getType()), brain(new Brain())
+{
+	std::cout << "Cat copy constructor called" << std::endl;
 }
 
 Cat::~Cat(void)
@@ -24,25 +28,23 @@ Cat::~Cat(void)
 	delete this->brain;
 }
 
-Brain*	Cat::getBrain(void) const
+const Brain&	Cat::getBrain(void) const
 {
-	return this->brain;
-}
-
-Cat&	Cat::operator=(const Cat& newCat)
-{
-	std::cout << "Operador de asignación de la clase Cat" << std::endl;
-	if (this != &newCat)
-	{
-		this->type = newCat.type;
-		if (this->brain)
-			delete this->brain;
-		this->brain = new Brain(*(newCat.getBrain()));
-	}
-	return *this;
+	return *this->brain;
 }
 
 void	Cat::makeSound(void) const
 {
 	std::cout << "MIIIIIIAAAAAAUUUUU" << std::endl;
+}
+
+Cat&	Cat::operator=(const Cat& cat)
+{
+	if (this != &cat)
+	{
+		this->type = cat.getType();
+		delete this->brain;
+		this->brain = new Brain(cat.getBrain());
+	}
+	return *this;
 }
