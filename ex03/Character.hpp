@@ -24,13 +24,20 @@ class	Character: public ICharacter
 	protected:
 		std::string	_name;
 		AMateria*	_inventory[4];
+		
+		const AMateria*	getAMateria(const int idx) const;
 	public:
 		Character(std::string name);
+		Character(const Character& character);
 		~Character(void);
-		std::string const& getName(void) const;
+
+		std::string const&	getName(void) const;
+
 		void	equip(AMateria* m);
 		void	unequip(int idx);
 		void	use(int idx, ICharacter& target);
+
+		Character&	operator=(const Character& character);
 };
 
 #endif

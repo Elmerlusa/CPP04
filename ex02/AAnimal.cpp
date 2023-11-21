@@ -40,8 +40,6 @@ std::string	AAnimal::getType(void) const
 AAnimal&	AAnimal::operator=(const AAnimal& animal)
 {
 	if (this != &animal)
-	{
 		this->type = animal.getType();
-	}
 	return *this;
 }

@@ -22,11 +22,15 @@ class	MateriaSource: public IMateriaSource
 {
 	protected:
 		AMateria*	_inventory[4];
+
+		const AMateria*	getAMateria(const int idx) const;
 	public:
 		MateriaSource(void);
+		MateriaSource(const MateriaSource& materiaSource);
 		~MateriaSource(void);
 		void	learnMateria(AMateria*);
 		AMateria*	createMateria(std::string const& type);
+		MateriaSource&	operator=(const MateriaSource& materiaSource);
 };
 
 #endif

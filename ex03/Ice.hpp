@@ -23,10 +23,13 @@ class	Ice: public AMateria
 {
 	public:
 		Ice(void);
+		Ice(const Ice& ice);
 		~Ice(void);
 
 		Ice*	clone(void) const;
 		void	use(ICharacter& target);
+
+		Ice&	operator=(const Ice& ice);
 };
 
 #endif

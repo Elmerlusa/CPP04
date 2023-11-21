@@ -45,8 +45,6 @@ void	Animal::makeSound(void) const
 Animal&	Animal::operator=(const Animal& animal)
 {
 	if (this != &animal)
-	{
 		this->type = animal.getType();
-	}
 	return *this;
 }

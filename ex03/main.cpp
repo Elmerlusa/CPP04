@@ -36,6 +36,7 @@ int	main(void)
 	c->use(1, *c);
 	c->use(2, *c);
 	delete c;
+	delete m;
 	delete i;
 	delete a;
 	return 0;

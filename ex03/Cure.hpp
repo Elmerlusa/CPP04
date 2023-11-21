@@ -23,10 +23,13 @@ class	Cure: public AMateria
 {
 	public:
 		Cure(void);
+		Cure(const Cure& cure);
 		~Cure(void);
 
 		Cure*	clone(void) const;
 		void	use(ICharacter& target);
+
+		Cure&	operator=(const Cure& cure);
 };
 
 #endif
