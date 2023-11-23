@@ -19,8 +19,8 @@ int	main(void)
 	const Dog*	j = new Dog();
 	const Dog*	i = new Dog(*j);
 
-	std::cout << "Original Dog's brain is allocated in " << &j->getBrain()
-		<< "\nCopy's brain is allocated in " << &i->getBrain() << std::endl;
+	std::cout << "Original Dog's brain is allocated in " << &j->getBrain() << " and its ideas in " << j->getBrain().getIdeas()
+		<< "\nCopy's brain is allocated in " << &i->getBrain() << " and its ideas in " << i->getBrain().getIdeas() << std::endl;
 	delete j;
 	delete i;
 	std::cout << "-------------------------------------------------" << std::endl;
@@ -34,6 +34,8 @@ int	main(void)
 		animals[i] = new Dog();
 	for (unsigned int i = size / 2; i < size; i++)
 		animals[i] = new Cat();
+	for (unsigned int i = 0; i < size; i++)
+		animals[i]->makeSound();
 	for (unsigned int i = 0; i < size; i++)
 		delete animals[i];
 	return 0;

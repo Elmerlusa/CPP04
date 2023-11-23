@@ -19,8 +19,11 @@ Brain::Brain(void)
 
 Brain::Brain(const Brain& newBrain)
 {
+	const std::string*	newIdeas = newBrain.getIdeas();
+
 	std::cout << "Brain's copy constructor called" << std::endl;
-	std::copy(newBrain.getIdeas(), newBrain.getIdeas() + 100, this->ideas);
+	for (unsigned int i = 0; i < 100; i++)
+		this->ideas[i] = newIdeas[i];
 }
 
 Brain::~Brain(void)
@@ -36,6 +39,11 @@ const std::string*	Brain::getIdeas(void) const
 Brain&	Brain::operator=(const Brain& brain)
 {
 	if (this != &brain)
-		std::copy(brain.getIdeas(), brain.getIdeas() + 100, this->ideas);
+	{
+		const std::string*	newIdeas = brain.getIdeas();
+
+		for (unsigned int i = 0; i < 100; i++)
+			this->ideas[i] = newIdeas[i];
+	}
 	return *this;
 }
